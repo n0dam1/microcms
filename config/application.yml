@@ -1,0 +1,18 @@
+defaults: &defaults
+  site:
+    name: name
+    page_title: page_title
+    page_description: page_description
+    page_keywords: page_keywords
+    og:
+      type: article
+      image_path: /images/og-image.png
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults

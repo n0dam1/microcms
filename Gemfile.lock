@@ -352,6 +352,7 @@ GEM
     selenium-webdriver (3.7.0)
       childprocess (~> 0.5)
       rubyzip (~> 1.0)
+    settingslogic (2.0.9)
     sitemap_generator (6.0.0)
       builder (~> 3.0)
     slim (3.0.9)
@@ -453,6 +454,7 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   scss_lint
   selenium-webdriver
+  settingslogic
   sitemap_generator
   slim-rails
   spring
