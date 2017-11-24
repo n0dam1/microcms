@@ -1,0 +1,7 @@
+<h1>PC</h1>
+<% @posts.each do |post| %>
+  <p>タイトル：<%= post.title %></p>
+  <p>内容：<%= post.content %></p>
+  <p>作成日時：<%= post.created_at %></p>
+  <p>更新日時：<%= post.updated_at %></p>
+<% end %>
