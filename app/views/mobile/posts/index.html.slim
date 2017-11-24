@@ -1,0 +1,15 @@
+h1
+  | Mobile
+- @posts.each do |post|
+  p
+    | タイトル：
+    = post.title
+  p
+    | 内容：
+    = post.content
+  p
+    | 作成日時：
+    = post.created_at
+  p
+    | 更新日時：
+    = post.updated_at
