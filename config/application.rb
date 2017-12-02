@@ -32,5 +32,8 @@ module Microcms
       g.assets false
       g.helper false
     end
+
+    mobile_css_paths = Dir.entries("#{config.root}/app/assets/stylesheets/mobile").select { |name| name =~ /css$/ }.map { |name| "mobile/#{name}" }
+    config.assets.precompile += mobile_css_paths
   end
 end

@@ -1,0 +1,15 @@
+module ActionView
+  module Helpers
+    module AssetTagHelper
+      def amp_image_tag(source, options = {})
+        src = options[:src] = ActionController::Base.helpers.path_to_image(source, skip_pipeline: options.delete(:skip_pipeline))
+
+        unless src.start_with?('cid:', 'data:') || src.blank?
+          options[:alt] = options.fetch(:alt) { ActionController::Base.helpers.image_alt(src) }
+        end
+        options[:layout] ||= 'fixed'
+        ActionController::Base.helpers.tag('amp-img', options)
+      end
+    end
+  end
+end
