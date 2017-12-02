@@ -5,7 +5,6 @@ module ApplicationHelper
       reverse: true, # タイトルタグ内の表記順をページタイトル|サイトタイトルの順にする
       title: Settings.site.page_title,
       description: Settings.site.page_description,
-      canonical: request.original_url,
       og: default_og
     }
   end
