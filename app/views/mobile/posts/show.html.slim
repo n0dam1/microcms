@@ -1,0 +1,11 @@
+p
+  | タイトル：
+  = @post.title
+p
+  | 内容：
+  = @post.content
+p
+  | 更新日時：
+  = @post.updated_at
+
+= link_to :index, posts_path

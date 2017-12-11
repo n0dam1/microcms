@@ -1,0 +1,15 @@
+= render 'shared/flash'
+
+p
+  | タイトル：
+  = @post.title
+p
+  | 内容：
+  = @post.content
+p
+  | 更新日時：
+  = @post.updated_at
+
+= link_to :index, posts_path
+= link_to :edit, edit_post_path(@post)
+= link_to :destroy, @post, method: :delete, data: { confirm: '削除してよいですか？' }
