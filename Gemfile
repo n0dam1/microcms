@@ -8,6 +8,7 @@ end
 gem 'activeadmin'
 gem 'acts-as-taggable-on'
 gem 'acts_as_list'
+gem 'ancestry'
 gem 'authlogic'
 gem 'canonical-rails'
 gem 'carrierwave'
