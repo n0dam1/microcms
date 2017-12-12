@@ -3,9 +3,15 @@
 p
   | タイトル：
   = @post.title
+
 p
   | 内容：
   = @post.content.html_safe
+
+p
+  | カテゴリ：
+  = @post.category.name
+
 p
   | タグ：
   - @post.tag_list.each do |tag|
