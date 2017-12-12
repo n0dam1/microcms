@@ -23,3 +23,5 @@
 
 /vendor/bundle
 .env
+
+public/sitemap.xml.gz
