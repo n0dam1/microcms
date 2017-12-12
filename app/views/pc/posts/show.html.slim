@@ -22,5 +22,9 @@ p
   = @post.updated_at
 
 = link_to :index, posts_path
-= link_to :edit, edit_post_path(@post)
-= link_to :destroy, @post, method: :delete, data: { confirm: '削除してよいですか？' }
+
+- if policy(@post).edit?
+  = link_to :edit, edit_post_path(@post)
+
+- if policy(@post).destroy?
+  = link_to :destroy, @post, method: :delete, data: { confirm: '削除してよいですか？' }

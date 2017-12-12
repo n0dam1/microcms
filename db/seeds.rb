@@ -1,3 +1,4 @@
+# categories
 metal, jazz = Category.create([{ name: 'metal' }, { name: 'jazz' }])
 
 melodic, black = metal.children.create([{ name: 'melodic' }, { name: 'black' }])
@@ -8,9 +9,23 @@ swing, modern = jazz.children.create([{ name: 'swing' }, { name: 'modern' }])
 
 categories = [metal, jazz, melodic, black, swing, modern]
 
-10.times do
+# users
+password = 'password'
+User.create!(email: 'hoge@foo.bar', password: password, password_confirmation: password, role: 1)
+User.create!(email: 'fuga@foo.bar', password: password, password_confirmation: password, role: 0)
+8.times do
+  email = Faker::Internet.email
+  User.create!(email: email, password: password, password_confirmation: password, role: 0)
+end
+
+users = User.order(:created_at).take(3)
+
+# posts
+30.times do
   title = Faker::Lorem.sentence
   content = Faker::Lorem.paragraph
   category_id = categories.sample.id
-  Post.create(title: title, content: content, category_id: category_id)
+  users.each do |user|
+    user.posts.create!(title: title, content: content, category_id: category_id)
+  end
 end
