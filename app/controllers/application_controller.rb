@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   include Jpmobile::ViewSelector
+  include Pundit
   before_action :set_view_path
   protect_from_forgery with: :exception
 

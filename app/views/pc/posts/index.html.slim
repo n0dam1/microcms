@@ -10,4 +10,5 @@ h1
     | 更新日時：
     = post.updated_at
 
-= link_to :new, new_post_path
+- if policy(@posts).new?
+  = link_to :new, new_post_path
