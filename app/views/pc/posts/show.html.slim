@@ -5,7 +5,12 @@ p
   = @post.title
 p
   | 内容：
-  = @post.content
+  = @post.content.html_safe
+p
+  | タグ：
+  - @post.tag_list.each do |tag|
+    = tag
+
 p
   | 更新日時：
   = @post.updated_at
