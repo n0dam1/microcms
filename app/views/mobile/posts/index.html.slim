@@ -1,11 +1,13 @@
-h1
-  | Mobile
-- @posts.each do |post|
-  p
-    | タイトル：
-    = link_to post.title, post
-  p
-    | 更新日時：
-    = post.updated_at
+main
+  h2.mb1.px3
+    | Mobile
 
-= paginate(@posts)
+  - @posts.each do |post|
+    p.mb4.px3
+      | タイトル：
+      = link_to post.title, post
+    p.mb4.px3
+      | 更新日時：
+      = post.updated_at
+
+  = paginate(@posts)
