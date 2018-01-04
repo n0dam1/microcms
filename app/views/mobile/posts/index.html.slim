@@ -8,6 +8,6 @@ main
       = link_to post.title, post
     p.mb4.px3
       | 更新日時：
-      = post.updated_at
+      = format_date_by_slash(post.updated_at)
 
   = paginate(@posts)
