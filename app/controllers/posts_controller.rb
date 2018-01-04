@@ -3,8 +3,10 @@ class PostsController < ApplicationController
   before_action :authorize_post, only: %i[index new create]
   after_action :verify_authorized
 
+  PER = 20
+
   def index
-    @posts = Post.all
+    @posts = Post.page(params[:page]).per(PER)
     respond_to do |format|
       format.html
       format.amp do
