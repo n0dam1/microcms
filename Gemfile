@@ -58,7 +58,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'pry-byebug'
   gem 'pry-rails'
-  gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler', require: false
   gem 'rubocop', require: false
   gem 'scss_lint', require: false
   gem 'spring'
