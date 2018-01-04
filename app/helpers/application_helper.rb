@@ -9,6 +9,14 @@ module ApplicationHelper
     }
   end
 
+  def format_date_by_dot(date)
+    date.strftime('%Y.%m.%d')
+  end
+
+  def format_date_by_slash(date)
+    date.strftime('%Y/%m/%d')
+  end
+
   private
 
   def default_og

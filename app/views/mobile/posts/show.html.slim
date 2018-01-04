@@ -1,7 +1,7 @@
 section
   =amp_image_tag("sample.jpg", width: "1600", height: "1066", layout: "responsive", alt: "Smaple", class: "mb3")
 
-p = @post.updated_at
+p = format_date_by_dot(@post.updated_at)
 h2.mb4 = @post.title
 p.mb4 = @post.content.html_safe
 
