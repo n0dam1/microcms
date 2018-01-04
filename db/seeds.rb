@@ -22,8 +22,8 @@ users = User.order(:created_at).take(3)
 
 # posts
 30.times do
-  title = Faker::Lorem.sentence
-  content = Faker::Lorem.paragraph
+  title = Yoshida::Text.sentence
+  content = Yoshida::Text.sentences(10).join
   category_id = categories.sample.id
   users.each do |user|
     user.posts.create!(title: title, content: content, category_id: category_id)

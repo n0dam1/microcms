@@ -1,0 +1,27 @@
+ja:
+  activerecord:
+    models:
+      post: 投稿
+      tag: タグ
+      category: カテゴリ
+      user: ユーザー
+    attributes:
+      post:
+        content: 内容
+        title: タイトル
+        category_id: カテゴリ
+        tag_list: タグ
+        created_at: 登録日時
+        updated_at: 更新日時
+      tag:
+        name: タグ名
+      category:
+        name: カテゴリ名
+        created_at: 登録日時
+        updated_at: 更新日時
+      user:
+        email: メールアドレス
+        created_at: 登録日時
+        updated_at: 更新日時
+        password: パスワード
+        password_confirmation: パスワード（確認）

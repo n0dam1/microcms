@@ -19,7 +19,7 @@ p
 
 p
   | 更新日時：
-  = @post.updated_at
+  = format_date_by_dot(@post.updated_at)
 
 = link_to :index, posts_path
 
