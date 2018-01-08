@@ -24,7 +24,7 @@ class Admin::PostsController < Admin::ApplicationController
     @post = Post.create(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to([:admin, @post], notice: '作成完了')
+      redirect_to([:admin, @post], success: '作成完了')
     else
       render :new
     end
@@ -38,7 +38,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def update
     if @post.update(post_params)
-      redirect_to([:admin, @post], notice: '更新完了')
+      redirect_to([:admin, @post], success: '更新完了')
     else
       render :edit
     end
@@ -46,7 +46,7 @@ class Admin::PostsController < Admin::ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to admin_posts_path, notice: '削除完了'
+    redirect_to admin_posts_path, success: '削除完了'
   end
 
   private
