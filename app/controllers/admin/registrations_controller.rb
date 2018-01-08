@@ -1,4 +1,4 @@
-class User::RegistrationsController < ApplicationController
+class Admin::RegistrationsController < Admin::ApplicationController
   def new
     @user = User.new
   end

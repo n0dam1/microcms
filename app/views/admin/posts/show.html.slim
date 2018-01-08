@@ -21,4 +21,8 @@ p
   | 更新日時：
   = format_date_by_dot(@post.updated_at)
 
-= link_to :index, posts_path
+= link_to :index, admin_posts_path
+
+= link_to :edit, edit_admin_post_path(@post)
+
+= link_to :destroy, admin_post_path(@post), method: :delete, data: { confirm: '削除してよいですか？' }
