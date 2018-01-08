@@ -1,4 +1,4 @@
-class User::SessionsController < ApplicationController
+class Admin::SessionsController < Admin::ApplicationController
   def new
     @user_session = UserSession.new
   end
@@ -6,7 +6,7 @@ class User::SessionsController < ApplicationController
   def create
     @user_session = UserSession.new(user_session_params)
     if @user_session.save
-      redirect_to root_path
+      redirect_to admin_root_path
     else
       render :new
     end
@@ -14,7 +14,7 @@ class User::SessionsController < ApplicationController
 
   def destroy
     current_user_session.destroy
-    redirect_to root_path
+    redirect_to admin_root_path
   end
 
   private

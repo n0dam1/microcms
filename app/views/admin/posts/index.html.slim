@@ -1,11 +1,15 @@
+= render 'shared/flash'
+
 h1
   | PC
 - @posts.each do |post|
   p
     | タイトル：
-    = link_to post.title, post
+    = link_to post.title, admin_post_path(post.id)
   p
     | 更新日時：
     = format_date_by_slash(post.updated_at)
 
 = paginate(@posts)
+
+= link_to :new, new_admin_post_path
