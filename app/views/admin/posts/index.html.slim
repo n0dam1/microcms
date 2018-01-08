@@ -28,4 +28,4 @@ div.row
 
     = paginate(@posts)
 
-    = link_to :new, new_admin_post_path
+    = button_to "新規作成", new_admin_post_path, class: "btn btn-default", method: :get
