@@ -1,9 +1,9 @@
-= form_with(model: @user, url: admin_registrations_path) do |f|
-  = f.label :email
-  = f.text_field :email
-  = f.label :password
-  = f.password_field :password
-  = f.label :password_confirmation
-  = f.password_field :password_confirmation
+.container
 
-  = f.submit "sign up"
+  = form_with(model: @user, url: admin_registrations_path, class: "form-signup") do |f|
+    h2.form-sigup-heading Sign up
+    = f.text_field :email, class: "form-control", placeholder: "メールアドレス"
+    = f.password_field :password, class: "form-control", placeholder: "パスワード"
+    = f.password_field :password_confirmation, class: "form-control", placeholder: "パスワード（確認）"
+
+    = f.submit "Sign up", class: "btn btn-lg btn-primary btn-block"
