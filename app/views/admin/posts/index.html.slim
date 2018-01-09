@@ -1,32 +1,33 @@
-div.row
-  nav.col-sm-3.col-md-2.sidebar
-    ul.nav.nav-sidebar
-      li
-        = link_to "投稿", admin_posts_path
-      li class="nav-item"
-        a href="#" 画像
+.container-fluid
+  div.row
+    nav.col-sm-3.col-md-2.sidebar
+      ul.nav.nav-sidebar
+        li
+          = link_to "投稿", admin_posts_path
+        li class="nav-item"
+          a href="#" 画像
 
-  main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
-    = render 'admin/shared/flash'
-    h1.page-header Dashboard
-    h2.sub-header 投稿
-    div.table-responsive
-      table.table.table-striped
-        thead
-          tr
-            th タイトル
-            th 作成者
-            th カテゴリ
-            th 更新時間
+    main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
+      = render 'admin/shared/flash'
+      h1.page-header Dashboard
+      h2.sub-header 投稿
+      div.table-responsive
+        table.table.table-striped
+          thead
+            tr
+              th タイトル
+              th 作成者
+              th カテゴリ
+              th 更新時間
 
-        tbody
-          - @posts.each do |post|
-              tr
-                td = link_to post.title, admin_post_path(post.id)
-                td = post.user.email
-                td = post.category.name
-                td = format_date_by_slash(post.updated_at)
+          tbody
+            - @posts.each do |post|
+                tr
+                  td = link_to post.title, admin_post_path(post.id)
+                  td = post.user.email
+                  td = post.category.name
+                  td = format_date_by_slash(post.updated_at)
 
-    = paginate(@posts)
+      = paginate(@posts)
 
-    = button_to "新規作成", new_admin_post_path, class: "btn btn-default", method: :get
+      = button_to "新規作成", new_admin_post_path, class: "btn btn-default", method: :get

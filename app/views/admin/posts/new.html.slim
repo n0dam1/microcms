@@ -1,4 +1,5 @@
-div.row
-  = render 'form', post: @post
+.container
+  .row
+    = render 'form', post: @post
 
-  = link_to "一覧", admin_posts_path
+    = link_to "一覧", admin_posts_path

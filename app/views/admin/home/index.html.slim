@@ -1,8 +1,10 @@
-h1
-  | admin home index
+.container
+  .row
+    h1
+      | admin home index
 
-- unless current_user
-  = link_to('Sign In', admin_sign_in_path)
-  = link_to('Sign Up', new_admin_registration_path)
-- else
-  = link_to('Sign Out', admin_sign_out_path, method: :delete)
+    - unless current_user
+      = button_to 'Sign In', admin_sign_in_path, method: :get, class: 'btn btn-default'
+      = button_to 'Sign Up', new_admin_registration_path, method: :get, class: 'btn btn-default'
+    - else
+      = button_to 'Sign Out', admin_sign_out_path, method: :delete, class: 'btn btn-default'
