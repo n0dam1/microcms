@@ -11,7 +11,7 @@ class Post < ApplicationRecord
 
   scope :index_all, -> {
     select(:id, :title, :updated_at, :user_id, :category_id)
-      .order(updated_at: :asc)
+      .order(updated_at: :desc)
       .includes(:user, :category)
   }
 end
