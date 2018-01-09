@@ -1,17 +1,8 @@
 class PostsController < ApplicationController
   before_action :set_post, only: %i[show]
 
-  PER = 20
-
   def index
-    @posts = Post.page(params[:page]).per(PER)
-    respond_to do |format|
-      format.html
-      format.amp do
-        lookup_context.formats = %i[amp html]
-        render
-      end
-    end
+    @posts = Post.page(params[:page])
   end
 
   def show
