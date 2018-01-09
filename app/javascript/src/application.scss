@@ -107,8 +107,8 @@ body {
 }
 
 .navbar-nav > li > a {
-  padding-bottom: 50px !important;
-  padding-top: 50px !important;
+  padding-bottom: 15px !important;
+  padding-top: 15px !important;
 }
 
 .navbar-fixed-top {
@@ -154,6 +154,10 @@ body {
   margin-bottom: 10px;
 }
 
+.form-signin input[type="submit"] {
+  margin-bottom: 5px;
+}
+
 .form-signup {
   margin: 0 auto;
   max-width: 330px;
@@ -194,5 +198,5 @@ body {
 }
 
 .form-signup input[type="submit"] {
-  margin-top: 10px;
+  margin: 10px 0 5px;
 }
