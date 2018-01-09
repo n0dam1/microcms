@@ -26,3 +26,4 @@
 
 public/sitemap.xml.gz
 .sass-cache
+.tags*

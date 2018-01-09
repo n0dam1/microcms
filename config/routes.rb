@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'posts#index'
   resources :posts, only: %i[index show]
   namespace :admin do
-    root 'home#index'
+    root 'dashboard#index'
+    get '/dashboard', to: 'dashboard#index'
     get '/sign_in', to: 'sessions#new'
     delete '/sign_out', to: 'sessions#destroy'
     resources :posts

@@ -24,6 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    return redirect_to sign_in_path unless current_user
+    return redirect_to admin_sign_in_path unless current_user
   end
 end

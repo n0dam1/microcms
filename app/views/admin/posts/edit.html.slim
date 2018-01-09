@@ -1,4 +1,6 @@
-= render 'form', post: @post
+.container
+  .row
+    = render 'form', post: @post
 
-= link_to :index, admin_posts_path
-= link_to :show, [:admin, @post]
+    = link_to "一覧", admin_posts_path
+    = link_to "詳細", [:admin, @post]

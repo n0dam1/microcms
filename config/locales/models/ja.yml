@@ -9,7 +9,7 @@ ja:
       post:
         content: 内容
         title: タイトル
-        category_id: カテゴリ
+        category: カテゴリ
         tag_list: タグ
         created_at: 登録日時
         updated_at: 更新日時
