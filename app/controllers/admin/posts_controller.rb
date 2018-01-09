@@ -3,17 +3,8 @@ class Admin::PostsController < Admin::ApplicationController
   before_action :authorize_post, only: %i[index new create]
   after_action :verify_authorized
 
-  PER = 20
-
   def index
-    @posts = Post.page(params[:page]).per(PER)
-    respond_to do |format|
-      format.html
-      format.amp do
-        lookup_context.formats = %i[amp html]
-        render
-      end
-    end
+    @posts = Post.index_all.page(params[:page])
   end
 
   def new
