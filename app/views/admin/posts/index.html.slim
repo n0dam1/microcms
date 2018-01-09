@@ -9,16 +9,16 @@
 
     main.col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
       = render 'admin/shared/flash'
-      h1.page-header Dashboard
-      h2.sub-header 投稿
+      h1.page-header 投稿
+      = button_to "新規作成", new_admin_post_path, class: "btn btn-default", method: :get
       div.table-responsive
         table.table.table-striped
           thead
             tr
-              th タイトル
-              th 作成者
-              th カテゴリ
-              th 更新時間
+              th.col-sm-6.col-md-6 タイトル
+              th.col-sm-1.col-md-1 作成者
+              th.col-sm-1.col-md-1 カテゴリ
+              th.col-sm-1.col-md-1 更新時間
 
           tbody
             - @posts.each do |post|
@@ -29,5 +29,3 @@
                   td = format_date_by_slash(post.updated_at)
 
       = paginate(@posts)
-
-      = button_to "新規作成", new_admin_post_path, class: "btn btn-default", method: :get
